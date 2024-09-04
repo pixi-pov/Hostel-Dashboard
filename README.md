@@ -44,9 +44,6 @@ Make your changes and commit them.
 Submit a pull request.
 
 
-📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 
 📧 Contact
 Feel free to reach out for any queries or suggestions: rahanish4@gmail.com.
