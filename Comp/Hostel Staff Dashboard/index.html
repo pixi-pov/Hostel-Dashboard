@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - Electrician</title>
+    <link rel="icon" href="./Components/Images/img.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./Components/Styling/styles.css">
+    <link rel="stylesheet" href="./Components/Styling/loader.css">
+</head>
+
+<body>
+
+    <div class="loader-wrapper">
+        <div class="card">
+            <div class="loader">
+                <p>Loading</p>
+                <div class="words">
+                    <span class="word">Dashboard</span>
+                    <span class="word">Summary</span>
+                    <span class="word">Complaints</span>
+                    <span class="word">Complete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <header>
+        <h1>Staff Dashboard</h1>
+    </header>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html" class="active">Dashboard</a></li>
+            <li><a href="Complaints-by-Date.html">Complaint Details</a></li>
+        </ul>
+    </nav>
+    <section id="dashboard">
+        <div class="section staff-summary">
+            <a href="../../index.html" class="logout-btn">Logout</a>
+            <h2><i class="fa-solid fa-user"></i><span class="shiny-text">Staff Profile</span></h2>
+            <div class="profile-pic">
+                <img src="./Components/Images/user.jpeg" alt="Electrician Picture">
+            </div>
+            <p><strong>Name:</strong> Amarjeet Kumar</p>
+            <p><strong>Position:</strong> Electrician</p>
+            <p><strong>Email:</strong> Amarjeet@hostel.com</p>
+            <p><strong>Phone Number:</strong> 9876543210</p>
+        </div>
+
+        <div class="section complaint-summary">
+            <h2><i class="fa-solid fa-clipboard-list"></i><span class="shiny-text">Complaint Overview</span></h2>
+            <table class="overview-table">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Resolved</td>
+                        <td class="status-resolved">30</td>
+                    </tr>
+                    <tr>
+                        <td>In Progress</td>
+                        <td class="status-in-progress">10</td>
+                    </tr>
+                    <tr>
+                        <td>Pending</td>
+                        <td class="status-pending">10</td>
+                    </tr>
+                    <tr>
+                        <td>Total Complaints</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section recent-complaints">
+            <h2><i class="fa-solid fa-clock"></i><span class="shiny-text">Recent Complaints</span></h2>
+            <table class="complaints-table">
+                <thead>
+                    <tr>
+                        <th>Complaint ID</th>
+                        <th>Room</th>
+                        <th>Status</th>
+                        <th>Date</th> <!-- Added Date Column -->
+                        <th>Time</th> <!-- Added Time Column -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Room 304</td>
+                        <td class="status-in-progress">In Progress</td>
+                        <td>2024-08-25</td> <!-- Added Date -->
+                        <td>10:30 AM</td> <!-- Added Time -->
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Room 516</td>
+                        <td class="status-pending">Pending</td>
+                        <td>2024-08-24</td> <!-- Added Date -->
+                        <td>12:45 PM</td> <!-- Added Time -->
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>Room 210</td>
+                        <td class="status-resolved">Resolved</td>
+                        <td>2024-08-23</td> <!-- Added Date -->
+                        <td>02:00 PM</td> <!-- Added Time -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Hostel Management</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./Components/Scripting/loader.js"></script>
+</body>
+
+</html>

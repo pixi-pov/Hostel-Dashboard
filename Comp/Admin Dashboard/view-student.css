@@ -1,0 +1,82 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e9ecef;
+}
+
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #212529;
+    font-weight: 600;
+}
+
+/* Student Info Styles */
+.student-info {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: auto;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 18px;
+    color: #343a40;
+}
+
+/* Button Styles */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-edit {
+    background-color: #28a745;
+}
+
+.btn-edit:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.btn-back {
+    background-color: #007bff;
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}

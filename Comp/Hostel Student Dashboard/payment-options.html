@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <link rel="icon" href="./Components/Images/img.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="./Components/Styling/payment-options.css">
+</head>
+<body>
+    <header>
+        <h1>Payment Options</h1>
+    </header>
+    <section class="payment-options">
+        <h2>Select Payment Method</h2>
+        <form class="payment-form" id="paymentForm" onsubmit="processPayment(event)">
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" onchange="showPaymentDetails()">
+                <option value="">Select...</option>
+                <option value="upi">UPI</option>
+                <option value="creditCard">Credit Card</option>
+                <option value="debitCard">Debit Card</option>
+                <option value="onlineBanking">Online Banking</option>
+            </select>
+            
+            <div id="upiDetails" class="hidden">
+                <div class="form-group inline">
+                    <div class="form-group">
+                        <label for="upiId">UPI ID:</label>
+                        <input type="text" id="upiId" placeholder="Enter your UPI ID">
+                    </div>
+                    <button type="button" class="verify-button" onclick="verifyUPI()">Verify</button>
+                </div>
+                <div id="verificationMessage" class="verification-message hidden"></div>
+            </div>
+            
+            <div id="cardDetails" class="hidden">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" placeholder="Enter your card number" maxlength="19">
+                </div>
+                <div class="form-group inline">
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date:</label>
+                        <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="7">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" placeholder="Enter CVV" maxlength="3" pattern="\d{3}">
+                </div>
+            </div>
+
+            <div id="onlineBankingDetails" class="hidden">
+                <div class="form-group">
+                    <label for="bank">Select Bank:</label>
+                    <select id="bank">
+                        <option value="bank1">STATE BANK OF INDIA</option>
+                        <option value="bank2">INDIAN BANK</option>
+                        <option value="bank3">PUNJAB NATIONAL BANK</option>
+                        <!-- Add more banks as needed -->
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" id="payButton" disabled>Pay ₹5000</button>
+        </form>
+        <a href="payments.html" class="back-button">Back to List</a>
+    </section>
+
+    <!-- Payment Success Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Payment Successful</h2>
+            </div>
+            <div class="modal-body">
+                <p style="color: #28a745;">Your payment was completed successfully!</p>
+                <p>You can download your receipt using the button below:</p>
+            </div>
+            <div class="modal-footer">
+                <a href="receipt.pdf" download>
+                    <button>Download Receipt</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="./Components/Scripting/payment-options.js"></script>
+</body>
+</html>

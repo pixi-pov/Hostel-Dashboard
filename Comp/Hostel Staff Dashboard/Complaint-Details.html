@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Details</title>
+    <link rel="icon" href="./Components/Images/img.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./Components/Styling/complaint-details.css">
+</head>
+
+<body>
+    <!-- Main Content -->
+    <header>
+        <h1>Complaint Details</h1>
+    </header>
+
+    <section id="complaint-details">
+        <div class="back-to-list">
+            <a href="Complaints-by-Date.html" class="btn">Back to Complaints List</a>
+        </div>
+
+        <div class="complaint-info">
+            <h2><i class="fa-solid fa-clipboard-list"></i> Complaint Information</h2>
+            <p><strong>Complaint ID:</strong> #12345</p>
+            <p><strong>Complaint Type:</strong> Electrical Issue</p>
+            <p><strong>Date Filed:</strong> 2024-08-25</p>
+            <p><strong>Status:</strong> <span id="complaint-status" class="status-In-Progress">In Progress</span></p>
+        </div>
+
+        <div class="student-info">
+            <h2><i class="fa-solid fa-user"></i> Student Information</h2>
+            <p><strong>Name:</strong> Ashish Raj</p>
+            <p><strong>Room Number:</strong> 516</p>
+            <p><strong>Email:</strong> ashishraulin@gmail.com</p>
+            <p><strong>Phone Number:</strong> 1234567890</p>
+        </div>
+
+        <div class="complaint-description">
+            <h2><i class="fa-solid fa-file-alt"></i> Complaint Description</h2>
+            <p>The electrical socket in my room is malfunctioning. It sparks when I try to plug in any device, and this poses a serious safety hazard. Kindly address this issue as soon as possible.</p>
+        </div>
+
+        <div class="actions">
+            <button class="btn resolve-btn"><i class="fa-solid fa-check-circle"></i> Mark as Resolved</button>
+            <button class="btn update-btn"><i class="fa-solid fa-edit"></i> Update Status</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hostel Management</p>
+    </footer>
+
+    <!-- Success Popup -->
+    <div id="success-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-check-circle"></i> Successfully Resolved</h2>
+            <p>The complaint has been marked as resolved.</p>
+            <button id="close-popup" class="btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Update Status Popup -->
+    <div id="update-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2><i class="fa-solid fa-edit"></i> Update Complaint Status</h2>
+            <label for="status-select">Select New Status:</label>
+            <select id="status-select">
+                <option value="In-Progress">In Progress</option>
+                <option value="pending">Pending</option>
+            </select>
+            <button id="update-status-btn" class="btn">Update Status</button>
+            <button id="close-update-popup" class="btn">Close</button>
+            <p id="update-message" class="hidden">Status updated successfully!</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const resolveButton = document.querySelector('.resolve-btn');
+            const updateButton = document.querySelector('.update-btn');
+            const successPopup = document.getElementById('success-popup');
+            const updatePopup = document.getElementById('update-popup');
+            const closeSuccessButton = document.getElementById('close-popup');
+            const closeUpdateButton = document.getElementById('close-update-popup');
+            const updateStatusButton = document.getElementById('update-status-btn');
+            const updateMessage = document.getElementById('update-message');
+            const complaintStatus = document.getElementById('complaint-status');
+            const statusSelect = document.getElementById('status-select');
+
+            function updateStatusClass(status) {
+                complaintStatus.classList.remove('status-In-Progress', 'status-pending', 'status-resolved');
+                switch (status) {
+                    case 'In-Progress':
+                        complaintStatus.classList.add('status-In-Progress');
+                        break;
+                    case 'pending':
+                        complaintStatus.classList.add('status-pending');
+                        break;
+                    case 'resolved':
+                        complaintStatus.classList.add('status-resolved');
+                        break;
+                }
+            }
+
+            resolveButton.addEventListener('click', function() {
+                complaintStatus.textContent = 'Resolved';
+                updateStatusClass('resolved');
+                successPopup.classList.remove('hidden');
+            });
+
+            closeSuccessButton.addEventListener('click', function() {
+                successPopup.classList.add('hidden');
+            });
+
+            updateButton.addEventListener('click', function() {
+                updatePopup.classList.remove('hidden');
+            });
+
+            closeUpdateButton.addEventListener('click', function() {
+                updatePopup.classList.add('hidden');
+            });
+
+            updateStatusButton.addEventListener('click', function() {
+                const newStatus = statusSelect.value;
+                complaintStatus.textContent = newStatus.charAt(0).toUpperCase() + newStatus.slice(1).replace(/-/g, ' ');
+                updateStatusClass(newStatus);
+                updateMessage.classList.remove('hidden');
+                setTimeout(function() {
+                    updateMessage.classList.add('hidden');
+                    updatePopup.classList.add('hidden');
+                }, 5000); // Hide the popup after 5 seconds
+            });
+        });
+    </script>
+    <script src="./Components/Scripting/loader.js"></script>
+</body>
+
+</html>

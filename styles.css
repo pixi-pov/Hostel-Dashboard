@@ -1,0 +1,132 @@
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to right, #007BFF, #00C6FF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .form-wrapper {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .flex-column > label {
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .inputForm {
+    border: 1.5px solid #dcdcdc;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .inputForm i {
+    color: #007BFF;
+    margin-right: 15px;
+  }
+  
+  .input {
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  
+  .input:focus {
+    outline: none;
+  }
+  
+  .inputForm:focus-within {
+    border: 1.5px solid #007BFF;
+  }
+  
+  .button-submit {
+    margin: 20px 0;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .button-submit:hover {
+    background-color: #0056b3;
+  }
+  
+  .role-message {
+    font-size: 14px;
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .forgot-password {
+    font-size: 14px;
+    color: red;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .forgot-password.hidden {
+    display: none; /* Hide the link */
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  .forgot-password-message {
+    font-size: 14px;
+    color: rgba(255, 0, 0, 0.618);
+    text-align: center;
+    margin-top: 10px;
+    display: none; /* Hidden by default */
+  }
+  

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Room Management</title>
+    <link rel="stylesheet" href="hostel.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-user-shield"></i> Hostel Admin
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="sidebar-item"><a href="manage-students.html" class="sidebar-link"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-user-tie"></i> Manage Staff</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-user-cog"></i> Manage Wardens</a></li>
+            <li class="sidebar-item active"><a href="manageroom.html" class="sidebar-link"><i class="fas fa-bed"></i> Manage Rooms</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-tools"></i> Maintenance Requests</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-exclamation-triangle"></i> Complaints</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-credit-card"></i> Payments</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-cogs"></i> Settings</a></li>
+            <!-- Other menu items -->
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Hostel Room Management</h1>
+        </header>
+
+        <!-- Floor Selection -->
+        <div class="floor-selection">
+            <label for="floorSelect">Select Floor:</label>
+            <select id="floorSelect">
+                <option value="1">First Floor</option>
+                <option value="2">Second Floor</option>
+                <option value="3">Third Floor</option>
+                <option value="4">Fourth Floor</option>
+                <option value="5">Fifth Floor</option>
+            </select>
+        </div>
+
+        <!-- Room Map -->
+        <div class="room-map"></div>
+
+        <!-- Room Information -->
+        <div class="room-info">
+            <h2>Room Legend</h2>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="room available"></div>
+                    <span>Available</span>
+                </div>
+                <div class="legend-item">
+                    <div class="room selected"></div>
+                    <span>Selected</span>
+                </div>
+                <div class="legend-item">
+                    <div class="room occupied"></div>
+                    <span>Occupied</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Management Information -->
+        <div class="management-info">
+            <h2>Room Details</h2>
+            <form id="roomForm">
+                <label for="roomNumber">Room Number:</label>
+                <input type="text" id="roomNumber" placeholder="Room number" readonly>
+
+                <label for="status">Status:</label>
+                <select id="status" required>
+                    <option value="available" selected>Available</option>
+                    <option value="occupied">Occupied</option>
+                </select>
+
+                <label for="details">Details:</label>
+                <textarea id="details" placeholder="Enter room details or notes" rows="4"></textarea>
+
+                <button type="submit" id="saveButton">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="hostel.js"></script>
+</body>
+</html>

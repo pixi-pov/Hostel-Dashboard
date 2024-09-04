@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student - Admin Dashboard</title>
+    <link rel="stylesheet" href="edit-student.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <!-- Sidebar content here -->
+    </aside>
+
+    <div class="main-content">
+        <header>
+            <h1>Edit Student Details</h1>
+        </header>
+        <form id="editStudentForm" class="student-form">
+            <div class="form-group">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" value="Ashish Raj" required>
+            </div>
+            <div class="form-group">
+                <label for="fathersName">Father's Name:</label>
+                <input type="text" id="fathersName" value="Rajesh Kumar Verma" required>
+            </div>
+            <div class="form-group">
+                <label for="roomAllotted">Room Allotted:</label>
+                <select id="roomAllotted" required>
+                    <option value="516" selected>516 (Occupied)</option>
+                    <option value="515">515 (Empty)</option>
+                    <option value="517">517 (Empty)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="branch">Branch:</label>
+                <select id="branch" required>
+                    <option value="Computer Science" selected>Computer Science</option>
+                    <option value="Electrical">Electrical</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" value="ashish.raj@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" value="+911234567890" required>
+            </div>
+            <div class="form-buttons">
+                <a href="managestudents.html" class="btn btn-cancel"><i class="fas fa-times"></i> Cancel</a>
+                <button type="submit" class="btn btn-submit"><i class="fas fa-save"></i> Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="edit-student.js"></script>
+</body>
+</html>

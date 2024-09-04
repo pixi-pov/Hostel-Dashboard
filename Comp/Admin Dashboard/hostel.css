@@ -1,0 +1,237 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #343a40;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-brand {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  margin: 10px 0;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-link:hover,
+.sidebar-item.active .sidebar-link {
+  background-color: #495057;
+}
+
+.sidebar-link i {
+  margin-right: 10px;
+}
+
+.main-content {
+  margin-left: 270px;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 32px;
+  color: #343a40;
+  font-weight: 700;
+  margin: 0;
+}
+
+.floor-selection {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.floor-selection label {
+  font-size: 16px;
+  color: #343a40;
+  margin-right: 10px;
+}
+
+.floor-selection select {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.room-map {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.room {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;  /* To position the badge inside the room */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.room.badge-single::after,
+.room.badge-triple::after {
+  content: attr(data-type); /* Shows 'Single' or 'Triple' based on the data-type attribute */
+  position: absolute;
+  bottom: 5px;  /* Positioned at the bottom-right corner */
+  right: 5px;
+  background-color: rgba(255, 255, 255, 0.8); /* White with transparency */
+  color: #333; /* Darker text color for readability */
+  font-size: 10px; /* Smaller font size */
+  padding: 2px 6px;
+  border-radius: 12px; /* Rounded badge */
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Small shadow for depth */
+  text-transform: capitalize; /* Makes text capitalized */
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+
+.room.available {
+  background-color: #28a745;
+}
+
+.room.selected {
+  background-color: #007bff;
+}
+
+.room.occupied {
+  background-color: #dc3545;
+  cursor: not-allowed;
+}
+
+.room:hover:not(.occupied) {
+  transform: scale(1.1);
+}
+
+.room-info {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.legend-item span {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #495057;
+}
+
+.management-info {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.management-info h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #343a40;
+}
+
+.management-info label {
+  display: block;
+  margin-bottom: 8px;
+  color: #495057;
+  font-weight: 600;
+}
+
+.management-info input, .management-info select, .management-info textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #495057;
+  margin-bottom: 20px;
+}
+
+.management-info button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #28a745;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.management-info button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+/* Notification Popup Styles */
+.notification-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff3300; /* Green background */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it appears above other content */
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+

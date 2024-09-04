@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student - Admin Dashboard</title>
+    <link rel="stylesheet" href="view-student.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <!-- Sidebar content here -->
+    </aside>
+
+    <div class="main-content">
+        <header>
+            <h1>Student Details</h1>
+        </header>
+        <div class="student-info">
+            <div class="info-item">
+                <label for="studentId">Student ID:</label>
+                <p id="studentId">001</p>
+            </div>
+            <div class="info-item">
+                <label for="studentName">Name:</label>
+                <p id="studentName">Ashish Raj</p>
+            </div>
+            <div class="info-item">
+                <label for="fathersName">Father's Name:</label>
+                <p id="fathersName">Raj Kumar</p>
+            </div>
+            <div class="info-item">
+                <label for="roomNo">Room No.:</label>
+                <p id="roomNo">516</p>
+            </div>
+            <div class="info-item">
+                <label for="branch">Branch:</label>
+                <p id="branch">Computer Science</p>
+            </div>
+            <div class="info-item">
+                <label for="contact">Contact:</label>
+                <p id="contact">+911234567890</p>
+            </div>
+            <div class="info-item">
+                <label for="admissionDate">Admission Date:</label>
+                <p id="admissionDate">2024-09-01 12:00</p>
+            </div>
+            <div class="button-group">
+                <a href="edit-student.html?id=001" class="btn btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                <a href="managestudents.html" class="btn btn-back"><i class="fas fa-arrow-left"></i> Back</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="view-student.js"></script>
+</body>
+</html>

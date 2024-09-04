@@ -1,0 +1,465 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0;
+    position: relative;
+}
+
+.navbar a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 16px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover::before,
+.navbar a.active::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+#dashboard {
+    padding: 2rem;
+    margin: 30px auto;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: justify; /* Justify text */
+    text-align-last: center; /* Center the last line */
+}
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.logout-btn {
+    right: 20px; /* Positioned near edit button */
+    background-color: #dc3545;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.section h2 i {
+    margin-right: 10px;
+}
+
+.section h2 .shiny-text {
+    position: relative;
+    display: inline-block;
+    color: #007bff;
+}
+
+.section h2 .shiny-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 70%);
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.staff-summary,
+.complaint-summary,
+.recent-complaints {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.profile-pic img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Complaint Overview Table */
+.overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.overview-table th,
+.overview-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.overview-table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.overview-table td {
+    background-color: #f9f9f9;
+}
+
+.overview-table .status-in-progress {
+    color: #ffeb3b; /* Yellow */
+}
+
+.overview-table .status-pending {
+    color: #f44336; /* Red */
+}
+
+.overview-table .status-resolved {
+    color: #4caf50; /* Green */
+}
+
+/* Recent Complaints Table */
+.complaints-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.complaints-table th,
+.complaints-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.complaints-table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.complaints-table td {
+    background-color: #f9f9f9;
+}
+
+.complaints-table .status-in-progress {
+    color: #ffeb3b; /* Yellow */
+}
+
+.complaints-table .status-pending {
+    color: #f44336; /* Red */
+}
+
+.complaints-table .status-resolved {
+    color: #4caf50; /* Green */
+}
+
+footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.875rem;
+}
+
+/* Complaints by Date Page Styles */
+#complaints-by-date {
+    padding: 2rem;
+    margin: 30px auto;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.date-selector form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.date-selector form label {
+    font-weight: bold;
+}
+
+.date-selector form input[type="date"] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.date-selector form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.date-selector form button:hover {
+    background-color: #0056b3;
+}
+
+/* Adjustments to ensure consistency */
+.complaints-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.complaints-list th,
+.complaints-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.complaints-list th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.complaints-list td {
+    background-color: #f9f9f9;
+}
+
+.complaints-list .status-in-progress {
+    color: #ffeb3b; /* Yellow */
+}
+
+.complaints-list .status-pending {
+    color: #f44336; /* Red */
+}
+
+.complaints-list .status-resolved {
+    color: #4caf50; /* Green */
+}
+.search-bar {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#search-area {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#search-area label {
+    font-weight: bold;
+}
+
+#search-area input[type="number"] {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#search-area button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#search-area button:hover {
+    background-color: #0056b3;
+}
+/* Hide number input arrows in WebKit-based browsers */
+#search-area input[type="number"]::-webkit-inner-spin-button,
+#search-area input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide number input arrows in Firefox */
+#search-area input[type="number"] {
+    -moz-appearance: textfield;
+}
+/* Add this to your styles.css or a relevant CSS file */
+.highlight {
+    background-color: #ffff99; /* Light yellow background for highlighted rows */
+}
+/* Add to your CSS file */
+.highlight {
+    background-color: #e0f7fa; /* Light cyan for highlighting */
+}
+
+
+/* Enhanced Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pagination button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+.pagination span {
+    font-size: 1rem;
+}
+
+.pagination input[type="number"] {
+    width: 60px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.pagination input[type="number"]::-webkit-inner-spin-button,
+.pagination input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Center align table cell content */
+.complaints-list td {
+    text-align: center; /* Center align all table cell content */
+}
+
+/* Specific styles for the details button */
+.details-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
+}
+
+.details-btn:hover {
+    background-color: #0056b3;
+}
+
+

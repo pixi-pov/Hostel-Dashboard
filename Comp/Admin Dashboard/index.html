@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Hostel Management</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="loader.css">
+    <!-- Include FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Loader HTML -->
+    <div class="loader-wrapper">
+        <div class="card">
+            <div class="loader">
+                <p>loading</p>
+                <div class="words">
+                    <span class="word">Dashboard</span>
+                    <span class="word">Student List</span>
+                    <span class="word">Room Details</span>
+                    <span class="word">Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-user-shield"></i> Hostel Admin
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item active"><a href="index.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="sidebar-item"><a href="managestudents.html" class="sidebar-link"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-user-tie"></i> Manage Staff</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-user-cog"></i> Manage Wardens</a></li>
+            <li class="sidebar-item"><a href="manageroom.html" class="sidebar-link"><i class="fas fa-bed"></i> Manage Rooms</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-tools"></i> Maintenance Requests</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-exclamation-triangle"></i> Complaints</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-credit-card"></i> Payments</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-cogs"></i> Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Dashboard Overview -->
+        <div class="dashboard-overview">
+            <div class="overview-card">
+                <i class="fas fa-users"></i>
+                <div class="overview-info">
+                    <h3>150</h3>
+                    <p>Total Users</p>
+                </div>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-user-graduate"></i>
+                <div class="overview-info">
+                    <h3>80</h3>
+                    <p>Students</p>
+                </div>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-user-tie"></i>
+                <div class="overview-info">
+                    <h3>20</h3>
+                    <p>Staff Members</p>
+                </div>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-user-cog"></i>
+                <div class="overview-info">
+                    <h3>5</h3>
+                    <p>Wardens</p>
+                </div>
+            </div>
+            <!-- Additional Overview Cards -->
+            <div class="overview-card">
+                <i class="fas fa-tools"></i>
+                <div class="overview-info">
+                    <h3>5</h3>
+                    <p>Maintenance Requests</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Content (e.g., Manage Users, Complaints) -->
+        <div class="section-content">
+            <!-- This will change based on navigation selection -->
+            <h2>Welcome, Admin!</h2>
+            <p>Select a menu item from the left to get started.</p>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+    <script src="loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Students - Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <!-- Include FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-user-shield"></i> Hostel Admin
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="sidebar-item active"><a href="manage-students.html" class="sidebar-link"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-user-tie"></i> Manage Staff</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-user-cog"></i> Manage Wardens</a></li>
+            <li class="sidebar-item"><a href="manageroom.html" class="sidebar-link"><i class="fas fa-bed"></i> Manage Rooms</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-tools"></i> Maintenance Requests</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-exclamation-triangle"></i> Complaints</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-credit-card"></i> Payments</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-cogs"></i> Settings</a></li>
+            <!-- Other menu items -->
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Manage Students Section -->
+        <div class="student-controls">
+            <div class="control-group">
+                <input type="text" id="searchStudent" placeholder="Search by name or ID" class="search-input">
+                <button class="btn-search" id="searchButton"><i class="fas fa-search"></i> Search</button>
+                <button class="btn-reset" id="resetButton"><i class="fas fa-redo"></i> Reset</button>
+            </div>
+            <div class="filter-group">
+                <label for="statusFilter">Filter by Branch:</label>
+                <select id="statusFilter" class="filter-select">
+                    <option value="">All Branches</option>
+                    <option value="Computer Science (Data Science)">Computer Science (Data Science)</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Robotics">Robotics</option>
+                    <!-- More options -->
+                </select>
+            </div>
+            
+            <!-- Add New Student Button -->
+            <button class="btn-add" id="addStudentButton">Add New Student</button>
+        </div>
+
+        <!-- Students Table -->
+        <div class="students-table">
+            <table id="studentsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Room No.</th>
+                        <th>Branch</th>
+                        <th>Contact</th>
+                        <th>Admission Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <!-- Default Student Rows -->
+                    <tr>
+                        <td>001</td>
+                        <td>Ashish Raj</td>
+                        <td>515</td>
+                        <td>Computer Science (Data Science)</td>
+                        <td>1234567890</td>
+                        <td>2024-09-01</td>
+                        <td>
+                            <a href="view-student.html" class="btn-view"><i class="fas fa-eye"></i> View</a>
+                            <a href="edit-student.html" class="btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                            <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Rishu Kumar</td>
+                        <td>516</td>
+                        <td>Electrical</td>
+                        <td>0987654321</td>
+                        <td>2024-09-01</td>
+                        <td>
+                            <a href="view-student.html" class="btn-view"><i class="fas fa-eye"></i> View</a>
+                            <a href="edit-student.html" class="btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                            <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                    </tr>
+                    <!-- More default rows can be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<!-- Add New Student Popup -->
+<div id="addStudentPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" id="cancelButton">&times;</span>
+        <!-- Display the current date at the top right corner -->
+        <div class="admission-date-display" id="admissionDateDisplay"></div>
+        <!-- Display the next student ID -->
+        <div class="student-id-display" id="studentIdDisplay"></div>
+        <h2>Add New Student</h2>
+        <form id="addStudentForm">
+            <!-- Student Name -->
+            <label for="studentName">Name:</label>
+            <input type="text" id="studentName" placeholder="Enter student name" required>
+
+            <!-- Father's Name -->
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" placeholder="Enter father's name" required>
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter email address" required>
+
+            <!-- Password -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password" required>
+
+            <!-- Room No Dropdown -->
+            <label for="roomNo">Room No.:</label>
+            <select id="roomNo" class="room-dropdown" required>
+                <option value="" disabled selected>Select Room</option>
+                <option value="101">101</option>
+                <option value="102" disabled>102 (Full)</option>
+                <option value="103">103</option>
+                <option value="104" disabled>104 (Full)</option>
+                <option value="105">105</option>
+                <option value="106" disabled>106 (Full)</option>
+                <option value="107">107</option>
+                <option value="108">108</option>
+            </select>
+
+            <!-- Branch Selection -->
+            <label for="branch">Branch:</label>
+            <select id="branch" required>
+                <option value="" disabled selected>Select Option</option>
+                <option value="Computer Science (Data Science)">Computer Science (Data Science)</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Civil">Civil</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Robotics">Robotics</option>
+            </select>
+
+            <!-- Contact Number -->
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" placeholder="Enter contact number" required pattern="\d{10}" title="Contact number must be 10 digits" maxlength="10">
+
+            <button type="submit" id="saveButton">Save Student</button>
+        </form>
+    </div>
+</div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
