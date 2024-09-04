@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Staff - Admin Dashboard</title>
+    <link rel="stylesheet" href="view-staff.css">
+    <!-- Include FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Staff Details</h1>
+        </header>
+        <div class="staff-info">
+            <div class="info-card">
+                <div class="info-header">
+                    <div class="profile-picture">
+                        <img src="image/user.jpeg" alt="Staff Profile Picture">
+                    </div>
+                    <h2>Staff Information</h2>
+                </div>
+                <div class="info-body">
+                    <div class="info-row">
+                        <span class="info-label">ID:</span>
+                        <span class="info-value">STF001</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Name:</span>
+                        <span class="info-value">Amarjeet Kumar</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Role:</span>
+                        <span class="info-value">Electrician</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">amarjeet@example.com</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Contact:</span>
+                        <span class="info-value">1234567890</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Joining Date:</span>
+                        <span class="info-value">2024-01-15</span>
+                    </div>
+                    <div class="info-row password-row">
+                        <span class="info-label">Password:</span>
+                        <span class="info-value">
+                            <input type="password" id="staffPassword" value="staffPassword123" readonly>
+                            <i class="fas fa-eye" id="togglePassword" onclick="togglePassword()"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="manage-staff.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back</a>
+    </div>
+
+    <script src="view-staff.js"></script>
+</body>
+</html>

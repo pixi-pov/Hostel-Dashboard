@@ -1,0 +1,428 @@
+/* Reset and Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #f4f7fa;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  overflow: auto;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  background-color: #007BFF;
+  color: white;
+  width: 250px;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar-brand {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  margin-bottom: 20px;
+}
+
+.sidebar-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-link:hover, .sidebar-item.active .sidebar-link {
+  background-color: #0056b3;
+}
+
+/* Sidebar Icons */
+.sidebar-item i {
+  font-size: 18px;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Manage Staff Section */
+.staff-controls {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.control-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.search-input {
+  padding: 10px;
+  width: calc(100% - 150px);
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Button */
+.btn-search, .btn-reset {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-search, .btn-reset {
+  background-color: #0056b3;
+}
+
+.btn-search, .btn-reset i {
+  margin-right: 5px;
+}
+
+/* Filter Dropdown */
+.filter-group {
+  margin-bottom: 15px;
+}
+
+.filter-select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add New Staff Button */
+.btn-add {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  width: 150px; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 5px;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+  margin-bottom: 15px; 
+  font-size: 0.85rem; 
+}
+
+.btn-add:hover {
+  background-color: #218838;
+}
+
+.btn-add i {
+  margin-right: 5px; 
+}
+
+/* Enhanced Table Style */
+.staff-table {
+  width: 100%;
+  max-width: 1200px;
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.staff-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.staff-table th,
+.staff-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.staff-table th {
+  background-color: #f4f7fa;
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.staff-table tr:nth-child(even) {
+  background-color: #f9fbfd;
+}
+
+.staff-table tr:hover {
+  background-color: #e2e8ec;
+}
+
+.staff-table td a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.staff-table td a:hover {
+  color: #ffffff;
+}
+
+/* Button Styles within Table */
+.table-btn-view,
+.table-btn-edit,
+.table-btn-delete {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: white;
+  font-size: 0.85rem;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.table-btn-view {
+  background-color: #17a2b8;
+}
+
+.table-btn-edit {
+  background-color: #ffc107;
+}
+
+.table-btn-delete {
+  background-color: #dc3545;
+}
+
+.table-btn-view:hover {
+  background-color: #138496;
+}
+
+.table-btn-edit:hover {
+  background-color: #e0a800;
+}
+
+.table-btn-delete:hover {
+  background-color: #c82333;
+}
+/* Popup Overlay */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background with more opacity */
+  z-index: 1000; /* Sit on top */
+  transition: all 0.3s ease; /* Smooth transition for appearance */
+}
+
+/* Popup Content Box */
+.popup-content {
+  background-color: #fff;
+  margin: auto; /* Center horizontally */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Correct centering */
+  padding: 30px;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 50%; /* Adjust width for responsiveness */
+  max-width: 600px; /* Maximum width */
+  position: absolute; /* Positioning for close button */
+  animation: slideDown 0.4s ease; /* Animation on appearance */
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -60%); /* Start a bit higher */
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%); /* End at the center */
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.close {
+  color: #333;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #e74c3c; /* Change color on hover */
+  text-decoration: none;
+}
+
+/* Popup Title */
+.popup-content h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+/* Form Labels */
+.popup-content form label {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #34495e;
+}
+
+/* Form Inputs and Selects */
+.popup-content form input[type="text"],
+.popup-content form input[type="email"],
+.popup-content form input[type="password"],
+.popup-content form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s ease;
+}
+
+/* Focus State for Inputs and Selects */
+.popup-content form input[type="text"]:focus,
+.popup-content form input[type="email"]:focus,
+.popup-content form input[type="password"]:focus,
+.popup-content form select:focus {
+  border-color: #3498db; /* Change border color on focus */
+  background-color: #fff; /* Background color on focus */
+}
+
+/* Submit Button */
+.popup-content form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Submit Button Hover */
+.popup-content form button[type="submit"]:hover {
+  background-color: #2980b9; /* Darker shade on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .popup-content {
+    width: 80%; /* Adjust width for smaller screens */
+  }
+}
+
+/* Joining Date Display */
+.admission-date-display {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 14px;
+  color: #34495e;
+  background-color: #ecf0f1;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Staff ID Display */
+.student-id-display {
+  position: absolute;
+  top: 45px; /* Adjusted for spacing */
+  right: 20px;
+  font-size: 14px;
+  color: #2c3e50;
+  background-color: #ecf0f1;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+}
+
+/* Role Dropdown Styling */
+.popup-content form select {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Single column for role selection */
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 200px; /* Adjust height if needed */
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+/* Style for Role Options */
+.popup-content form select option {
+  padding: 8px 10px;
+  margin: 5px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+/* Disabled Role Options Styling */
+.popup-content form select option:disabled {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+}
+

@@ -1,0 +1,163 @@
+/* view-staff.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e9ecef;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 800px; /* Fixed width to prevent stretching */
+    margin: 20px auto; /* Center horizontally and add top and bottom margin */
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px; /* Reduced margin */
+}
+
+h1 {
+    color: #343a40;
+    font-size: 24px; /* Adjusted font size */
+    margin: 0;
+}
+
+.staff-info {
+    margin-bottom: 20px;
+}
+
+.info-card {
+    padding: 15px; /* Adjusted padding */
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden; /* Ensure no overflow */
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 8px; /* Adjusted padding */
+    margin-bottom: 15px; /* Adjusted margin */
+}
+
+.profile-picture {
+    margin-right: 15px; /* Adjusted margin */
+    flex-shrink: 0;
+}
+
+.profile-picture img {
+    width: 80px; /* Adjusted size */
+    height: 80px; /* Adjusted size */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+}
+
+.info-header h2 {
+    color: #007bff;
+    margin: 0;
+    font-size: 20px; /* Adjusted font size */
+}
+
+.info-body {
+    font-size: 14px; /* Adjusted font size */
+    color: #495057;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0; /* Adjusted padding */
+    border-bottom: 1px solid #dee2e6;
+    transition: background-color 0.3s ease;
+}
+
+.info-row:hover {
+    background-color: #f1f1f1;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #343a40;
+    flex: 1;
+    transition: color 0.3s ease;
+}
+
+.info-label:hover {
+    color: #007bff;
+}
+
+.info-value {
+    flex: 2;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.info-value:hover {
+    color: #007bff;
+}
+
+.password-row {
+    position: relative;
+}
+
+#staffPassword {
+    border: none;
+    background: transparent;
+    font-size: 14px; /* Adjusted font size */
+    color: #495057;
+    outline: none;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+#togglePassword:hover {
+    color: #0056b3;
+}
+
+.btn-back {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px; /* Adjusted padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* Adjusted font size */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back i {
+    margin-right: 8px;
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+}

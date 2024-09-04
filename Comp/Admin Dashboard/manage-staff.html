@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Staff - Admin Dashboard</title>
+    <link rel="stylesheet" href="manage-staff.css">
+    <!-- Include FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-user-shield"></i> Hostel Admin
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="sidebar-item"><a href="manage-students.html" class="sidebar-link"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+            <li class="sidebar-item active"><a href="manage-staff.html" class="sidebar-link"><i class="fas fa-user-tie"></i> Manage Staff</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-user-cog"></i> Manage Wardens</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Manage Staff</h1>
+        <div class="staff-controls">
+            <div class="control-group">
+                <input type="text" placeholder="Search staff..." class="search-input">
+                <button class="btn-search"><i class="fas fa-search"></i> Search</button>
+                <button class="btn-reset"><i class="fas fa-undo"></i> Reset</button>
+            </div>
+            <div class="filter-group">
+                <select class="filter-select">
+                    <option value="">Select Role</option>
+                    <option value="electrician">Electrician</option>
+                    <option value="room-cleaner">Room Cleaner</option>
+                    <option value="wifi-incharge">WiFi Incharge</option>
+                    <option value="mess-coordinator">Mess Coordinator</option>
+                    <!-- Add more roles here -->
+                </select>
+            </div>
+            <button id="addStaffButton" class="btn-add btn-add-staff">
+                <i class="fas fa-user-plus"></i> Add New Staff
+              </button>
+              
+        </div>
+        <div class="staff-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Joining Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>STF001</td>
+                        <td>Amarjeet Kumar</td>
+                        <td>Electrician</td>
+                        <td>2024-01-15</td>
+                        <td>
+                            <a href="view-staff.html" class="table-btn-view"><i class="fas fa-eye"></i> View</a>
+                            <a href="#" class="table-btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="#" class="table-btn-delete"><i class="fas fa-trash"></i> Delete</a>
+                        </td>
+                    </tr>
+                    <!-- More rows here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Add New Staff Popup -->
+    <div id="addStaffPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <!-- Display the current date at the top right corner -->
+            <div class="admission-date-display"></div>
+            <!-- Display the next staff ID -->
+            <div class="student-id-display"></div>
+            <h2>Add New Staff</h2>
+            <form id="addStaffForm">
+            <!-- Staff Name -->
+            <label for="staffName">Name:</label>
+            <input type="text" id="staffName" placeholder="Enter staff name" required>
+
+            <!-- Role -->
+            <label for="staffRole">Role:</label>
+            <select id="staffRole" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="Electrician">Electrician</option>
+                <option value="Room Cleaner">Room Cleaner</option>
+                <option value="Wifi-incharge">Wifi-incharge</option>
+                <option value="Mess-coordinator">Mess-coordinator</option>
+            </select>
+
+            <!-- Email -->
+            <label for="staffEmail">Email:</label>
+            <input type="email" id="staffEmail" placeholder="Enter email address" required>
+
+            <!-- Password -->
+            <label for="staffPassword">Password:</label>
+            <input type="password" id="staffPassword" placeholder="Enter password" required>
+
+            <!-- Contact Number -->
+            <label for="staffContact">Contact:</label>
+            <input type="text" id="staffContact" placeholder="Enter contact number" required pattern="\d{10}" title="Contact number must be 10 digits" maxlength="10">
+
+            <button type="submit" id="staffSaveButton">Save Staff</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<script src="manage-staff.js"></script>
+</body>
+</html>
