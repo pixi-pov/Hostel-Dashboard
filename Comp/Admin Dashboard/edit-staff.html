@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Staff - Admin Dashboard</title>
+    <link rel="stylesheet" href="edit-staff.css">
+    <!-- Include FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Edit Staff Details</h1>
+        </header>
+        <div class="staff-edit-form">
+            <form id="editStaffForm">
+                <!-- Existing form fields -->
+                <div class="form-group">
+                    <label for="staffId">Staff ID</label>
+                    <input type="text" id="staffId" name="staffId" value="STF001" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="staffName">Name</label>
+                    <input type="text" id="staffName" name="staffName" value="Amarjeet Kumar">
+                </div>
+                
+                <div class="form-group">
+                    <label for="staffRole">Role</label>
+                    <select id="staffRole" name="staffRole">
+                        <option value="Electrician" selected>Electrician</option>
+                        <option value="Plumber">Plumber</option>
+                        <option value="Carpenter">Carpenter</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="staffEmail">Email</label>
+                    <input type="email" id="staffEmail" name="staffEmail" value="amarjeet@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="staffContact">Contact</label>
+                    <input type="text" id="staffContact" name="staffContact" value="1234567890">
+                </div>
+                
+                <div class="form-group">
+                    <label for="staffJoinDate">Joining Date</label>
+                    <input type="date" id="staffJoinDate" name="staffJoinDate" value="2024-01-15">
+                </div>
+
+                <div class="form-group">
+                    <label for="staffPassword">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="staffPassword" name="staffPassword" value="staffPassword123">
+                        <i class="fas fa-eye" id="togglePassword" onclick="togglePassword()"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="staffProfilePicture">Profile Picture</label>
+                    <input type="file" id="staffProfilePicture" name="staffProfilePicture" accept="image/*">
+                </div>
+
+                <!-- New Section: Status Count -->
+                <div class="status-count-section">
+                    <h2>Status Count</h2>
+                    <div class="form-group">
+                        <label for="resolvedCount">Resolved</label>
+                        <input type="number" id="resolvedCount" name="resolvedCount" value="30" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="inProgressCount">In Progress</label>
+                        <input type="number" id="inProgressCount" name="inProgressCount" value="10" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="pendingCount">Pending</label>
+                        <input type="number" id="pendingCount" name="pendingCount" value="10" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="totalComplaints">Total Complaints</label>
+                        <input type="number" id="totalComplaints" name="totalComplaints" value="50" min="0" readonly>
+                    </div>
+                </div>
+
+                <!-- Form actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn-save" onclick="saveChanges()"><i class="fas fa-save"></i> Save Changes</button>
+                    <a href="manage-staff.html" class="btn-cancel"><i class="fas fa-times"></i> Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div id="successPopup" class="success-popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Changes saved successfully!</p>
+        </div>
+    </div>
+
+    <script src="edit-staff.js"></script>
+</body>
+</html>

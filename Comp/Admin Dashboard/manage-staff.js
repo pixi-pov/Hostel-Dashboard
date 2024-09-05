@@ -83,7 +83,7 @@ function addNewStaff() {
             <td>${new Date().toISOString().slice(0, 10)}</td>
             <td>
                 <a href="" class="table-btn-view"><i class="fas fa-eye"></i> View</a>
-                <a href="#" class="table-btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                <a href="" class="table-btn-edit"><i class="fas fa-edit"></i> Edit</a>
                 <a href="#" class="table-btn-delete"><i class="fas fa-trash"></i> Delete</a>
             </td>
         `;

@@ -161,3 +161,84 @@ h1 {
 .btn-back:hover {
     background-color: #0056b3;
 }
+/* Enhanced Complaint Overview Section */
+.complaint-overview {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffffff; /* White background for the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid #dee2e6; /* Light border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover effect */
+}
+
+
+.complaint-overview h2 {
+    color: #007bff;
+    font-size: 22px; /* Slightly larger font size */
+    margin-bottom: 20px; /* More spacing below the heading */
+    text-align: center; /* Center align the heading */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+.complaint-overview table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.complaint-overview th, 
+.complaint-overview td {
+    text-align: left;
+    padding: 15px; /* Increased padding for more spacing */
+    font-size: 16px; /* Increased font size for better readability */
+    border-bottom: 1px solid #dee2e6; /* Light border between rows */
+    vertical-align: middle; /* Align content vertically in the middle */
+}
+
+/* Header Row Styling */
+.complaint-overview th {
+    background-color: #007bff; /* Blue background for header */
+    color: #ffffff; /* White text color */
+    font-weight: 600; /* Bold font weight */
+}
+
+/* Specific Status Colors */
+.resolved-row td:first-child {
+    color: #28a745; /* Resolved - Green */
+}
+
+.in-progress-row td:first-child {
+    color: #ffc107; /* In Progress - Yellow */
+}
+
+.pending-row td:first-child {
+    color: #dc3545; /* Pending - Red */
+}
+
+.total-row td:first-child {
+    color: #343a40; /* Total Complaints - Dark */
+}
+
+/* Icon Styling */
+.complaint-overview i {
+    margin-right: 8px; /* Spacing between icon and text */
+}
+
+/* Hover Effects */
+.complaint-overview tr:hover td {
+    background-color: #f1f1f1; /* Subtle background change on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.resolved-row:hover td:first-child {
+    color: #218838; /* Darker Green on hover */
+}
+
+.in-progress-row:hover td:first-child {
+    color: #e0a800; /* Darker Yellow on hover */
+}
+
+.pending-row:hover td:first-child {
+    color: #c82333; /* Darker Red on hover */
+}
