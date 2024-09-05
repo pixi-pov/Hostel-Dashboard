@@ -134,6 +134,76 @@ h1 {
     background-color: #c82333;
 }
 /*Success Popup*/
+/* edit-staff.css */
+
+/* Existing styles ... */
+
+/* Custom File Upload Styling */
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.custom-file-upload label {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.custom-file-upload label:hover {
+    background-color: #0056b3;
+}
+
+.custom-file-upload span {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Popup Styles */
+.success-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.popup-content {
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #155724;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #0c472f;
+}
+
 .success-popup {
     display: none; /* Hidden by default */
     position: fixed;

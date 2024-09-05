@@ -62,7 +62,11 @@
 
                 <div class="form-group">
                     <label for="staffProfilePicture">Profile Picture</label>
-                    <input type="file" id="staffProfilePicture" name="staffProfilePicture" accept="image/*">
+                    <div class="custom-file-upload">
+                        <input type="file" id="staffProfilePicture" name="staffProfilePicture" accept="image/*">
+                        <label for="staffProfilePicture" id="uploadLabel">Choose File</label>
+                        <span id="fileName">No file chosen</span>
+                    </div>
                 </div>
 
                 <!-- New Section: Status Count -->
