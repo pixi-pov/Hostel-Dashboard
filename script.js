@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const forgotPassword = document.getElementById("forgot-password");
   const forgotPasswordMessage = document.getElementById("forgot-password-message");
   const roleMessage = document.getElementById("role-message");
+  const trafficCounter = document.getElementById("traffic-counter"); // Use existing HTML element
 
   // Define passwords and usernames for each role
   const credentials = {
@@ -24,6 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
       usernames: ["admin1", "admin2"], // Replace with actual usernames
     },
   };
+
+  // Initialize and display traffic count using the existing HTML element
+  const initializeTrafficCount = () => {
+    let trafficCount = parseInt(localStorage.getItem("trafficCount")) || 0; // Get the current count or initialize to 0
+    trafficCount++; // Increment count
+    localStorage.setItem("trafficCount", trafficCount); // Save the updated count to localStorage
+    trafficCounter.textContent = `Total Traffic: ${trafficCount}`; // Update the existing HTML element
+  };
+
+  // Initial call to update the counter display on page load
+  initializeTrafficCount();
 
   form.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form from submitting normally
@@ -54,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "./Comp/Admin Dashboard/index.html"; // Update with the correct path
             break;
           default:
-            // Handle unexpected role values if necessary
             break;
         }
       } else {

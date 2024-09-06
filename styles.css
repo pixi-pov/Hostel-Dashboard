@@ -129,4 +129,40 @@
     margin-top: 10px;
     display: none; /* Hidden by default */
   }
+  #traffic-counter {
+    margin-top: 20px; 
+    font-size: 14px; 
+    color: #495057; 
+    font-weight: 500; 
+    background-color: #ffffff; 
+    padding: 10px 15px; 
+    border-radius: 4px; 
+    text-align: center; 
+    border: 1px solid #ced4da; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto; 
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+  }
+  #traffic-counter .traffic-number {
+    color: #343a40; 
+    font-size: 16px; 
+    font-weight: 600; 
+    transition: color 0.3s ease; 
+  }
+  #traffic-counter:hover {
+    background-color: #e3f2fd; 
+    color: #0d6efd;
+    border-color: #0d6efd; 
+  }
+  #traffic-counter:hover #traffic-icon {
+    color: #0d6efd; 
+  }
+  #traffic-counter:hover .traffic-number {
+    color: #0d6efd; 
+  }
   
