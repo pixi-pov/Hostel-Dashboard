@@ -22,7 +22,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/pixi-pov/hostel-management-system.git
+git clone https://github.com/pixi-pov/hostel-Dashboard.git
 Navigate to the project directory:
 
 bash
