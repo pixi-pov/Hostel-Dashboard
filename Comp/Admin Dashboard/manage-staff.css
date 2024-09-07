@@ -16,11 +16,15 @@ body {
 
 /* Sidebar Navigation */
 .sidebar {
-  background-color: #007BFF;
-  color: white;
   width: 250px;
   height: 100vh;
+  background-color: #007BFF;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
   padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -28,8 +32,8 @@ body {
 
 .sidebar-brand {
   font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -41,7 +45,7 @@ body {
 }
 
 .sidebar-item {
-  margin-bottom: 20px;
+  margin: 10px 0;
 }
 
 .sidebar-link {
@@ -50,7 +54,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 15px;
+  padding: 10px;
   border-radius: 8px;
   transition: background-color 0.3s;
 }
@@ -61,17 +65,20 @@ body {
 
 /* Sidebar Icons */
 .sidebar-item i {
+  margin-right: 10px;
   font-size: 18px;
 }
 
 /* Main Content */
 .main-content {
+  margin-left: 270px; /* Adjusted for fixed sidebar */
   display: flex;
   flex-direction: column;
   padding: 30px;
   flex: 1;
   overflow-y: auto;
 }
+
 
 /* Manage Staff Section */
 .staff-controls {

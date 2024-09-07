@@ -1,27 +1,42 @@
-/* General Styles */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Reset and Global Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #f0f2f5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body {
+  background-color: #f4f7fa;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  overflow: auto;
+}
+
+/* Sidebar Navigation */
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: #343a40;
+  background-color: #007BFF;
   color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 .sidebar-brand {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .sidebar-menu {
@@ -34,28 +49,36 @@ body {
 }
 
 .sidebar-link {
+  color: white;
   text-decoration: none;
-  color: #fff;
   display: flex;
   align-items: center;
+  gap: 10px;
   padding: 10px;
   border-radius: 8px;
   transition: background-color 0.3s;
 }
 
-.sidebar-link:hover,
-.sidebar-item.active .sidebar-link {
-  background-color: #495057;
+.sidebar-link:hover, .sidebar-item.active .sidebar-link {
+  background-color: #0056b3;
 }
 
-.sidebar-link i {
+/* Sidebar Icons */
+.sidebar-item i {
   margin-right: 10px;
+  font-size: 18px;
 }
 
+/* Main Content */
 .main-content {
-  margin-left: 270px;
-  padding: 20px;
+  margin-left: 270px; /* Adjusted for fixed sidebar */
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  flex: 1;
+  overflow-y: auto;
 }
+
 
 header {
   text-align: center;
