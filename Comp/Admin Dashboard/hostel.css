@@ -78,6 +78,19 @@ body {
   flex: 1;
   overflow-y: auto;
 }
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #2C3E50;
+  font-weight: 700;
+  margin: 0;
+  border-bottom: 2px solid #2C3E50;
+  padding-bottom: 10px;
+}
 
 
 header {

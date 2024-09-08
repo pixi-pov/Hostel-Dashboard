@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Wardens</title>
+    <link rel="stylesheet" href="manage-warden.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-user-shield"></i> Hostel Admin
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="sidebar-item"><a href="managestudents.html" class="sidebar-link"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+            <li class="sidebar-item"><a href="manage-staff.html" class="sidebar-link"><i class="fas fa-user-tie"></i> Manage Staff</a></li>
+            <li class="sidebar-item active"><a href="manage-warden.html" class="sidebar-link"><i class="fas fa-user-cog"></i> Manage Wardens</a></li>
+            <li class="sidebar-item"><a href="manageroom.html" class="sidebar-link"><i class="fas fa-bed"></i> Manage Rooms</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-tools"></i> Maintenance Requests</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-exclamation-triangle"></i> Complaints</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-credit-card"></i> Payments</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-cogs"></i> Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Manage Wardens</h1>
+        </header>
+
+        <!-- Add New Warden Button -->
+        <div class="add-warden-container">
+            <button class="add-warden-button" onclick="openAddWardenPopup()"><i class="fas fa-plus-circle"></i> Add New Warden</button>
+        </div>
+
+        <!-- Wardens Grid -->
+        <div class="warden-grid">
+            <div class="warden-box">
+                <h2><i class="fas fa-user-circle"></i> Warden 1</h2>
+                <p><strong>Name:</strong> Suman Kumar</p>
+                <p><strong>Contact:</strong> kumarsuman@example.com</p>
+                <p><strong>Phone:</strong> +91 12345 67890</p>
+                <div class="warden-actions">
+                    <button class="edit-button"><i class="fas fa-edit"></i> Edit</button>
+                    <button class="remove-button"><i class="fas fa-trash-alt"></i> Remove</button>
+                </div>
+            </div>
+
+            <div class="warden-box">
+                <h2><i class="fas fa-user-circle"></i> Warden 2</h2>
+                <p><strong>Name:</strong> Dheeraj Kumar</p>
+                <p><strong>Contact:</strong> kumardheeraj@example.com</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <div class="warden-actions">
+                    <button class="edit-button"><i class="fas fa-edit"></i> Edit</button>
+                    <button class="remove-button"><i class="fas fa-trash-alt"></i> Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="addwardenPopup" class="popup">
+        <div class="popup-content">
+            <!-- Display the current date at the top right corner -->
+            <div class="admission-date-display"></div>
+            <!-- Display the next warden ID -->
+            <div class="warden-id-display"></div>
+            <h2>Add New Warden</h2>
+            <form id="addWardenForm">
+                <!-- Warden Name -->
+                <label for="wardenName">Name:</label>
+                <input type="text" id="wardenName" placeholder="Enter warden name" required>
+    
+                <!-- Role -->
+                <label for="wardenRole">Role:</label>
+                <p id="wardenRole" class="static-role">Warden</p>
+    
+                <!-- Email -->
+                <label for="wardenEmail">Email:</label>
+                <input type="email" id="wardenEmail" placeholder="Enter email address" required>
+    
+                <!-- Password -->
+                <label for="wardenPassword">Password:</label>
+                <input type="password" id="wardenPassword" placeholder="Enter password" required>
+    
+                <!-- Contact Number -->
+                <label for="wardenContact">Contact:</label>
+                <input type="text" id="wardenContact" placeholder="Enter contact number" required pattern="\d{10}" title="Contact number must be 10 digits" maxlength="10">
+    
+                <button type="submit" id="wardenSaveButton">Save Warden</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="manage-wardens.js"></script>
+    </script>
+</body>
+</html>
