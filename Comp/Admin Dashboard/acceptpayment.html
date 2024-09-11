@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accept Payment</title>
+    <link rel="stylesheet" href="acceptpayment.css">
+</head>
+<body>
+    <!-- Full Screen Loader -->
+    <div id="fullscreenLoader" class="fullscreen-loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Accept Payment</h1>
+        </header>
+
+        <!-- Back Button -->
+        <div class="back-button-container">
+            <a href="managepayment.html" class="back-button">Back to Manage Payments</a>
+        </div>
+
+        <!-- Accept Payment Form -->
+        <div class="accept-payment-form">
+            <form id="paymentForm" onsubmit="return handleSubmit(event)">
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" name="studentId" value="001" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value="Ashish Raj" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" required>
+                </div>
+
+                <!-- Payment Mode Selection -->
+                <div class="form-group">
+                    <label for="paymentMode">Payment Mode</label>
+                    <select id="paymentMode" name="paymentMode" onchange="togglePaymentFields()">
+                        <option value="" disabled selected>Select Payment Mode</option>
+                        <option value="online">Online</option>
+                        <option value="offline">Cash</option>
+                    </select>
+                </div>
+
+                <!-- Online Payment Fields -->
+                <div id="onlinePaymentFields" class="payment-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="transactionId">Transaction ID</label>
+                        <input type="text" id="transactionId" name="transactionId">
+                    </div>
+                </div>
+
+                <!-- Offline Payment Fields -->
+                <div id="offlinePaymentFields" class="payment-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="receiptNumber">Receipt Number</label>
+                        <input type="text" id="receiptNumber" name="receiptNumber">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Success Popup -->
+        <div id="successPopup" class="popup">
+            <div class="popup-content">
+                <p>Payment Accepted Successfully!</p>
+                <button class="download-button" onclick="downloadReceipt()">Download Receipt</button>
+                <button onclick="closePopup()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for toggling payment fields and handling form submission -->
+    <script>
+        function togglePaymentFields() {
+            const paymentMode = document.getElementById('paymentMode').value;
+            const onlinePaymentFields = document.getElementById('onlinePaymentFields');
+            const offlinePaymentFields = document.getElementById('offlinePaymentFields');
+
+            if (paymentMode === 'online') {
+                onlinePaymentFields.style.display = 'block';
+                offlinePaymentFields.style.display = 'none';
+            } else if (paymentMode === 'offline') {
+                onlinePaymentFields.style.display = 'none';
+                offlinePaymentFields.style.display = 'block';
+            } else {
+                onlinePaymentFields.style.display = 'none';
+                offlinePaymentFields.style.display = 'none';
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Show full screen loader
+            document.getElementById('fullscreenLoader').style.display = 'flex'; 
+
+            // Simulate form processing (you should replace this with actual form submission logic)
+            setTimeout(() => {
+                // Hide loader after processing
+                document.getElementById('fullscreenLoader').style.display = 'none'; 
+
+                // Show the success popup
+                document.getElementById('successPopup').style.display = 'flex'; 
+            }, 2000); // Simulate a 2-second processing time
+
+            return false; // Prevent form submission
+        }
+
+        function closePopup() {
+            document.getElementById('successPopup').style.display = 'none'; // Hide the popup
+        }
+
+        function downloadReceipt() {
+            // Implement download functionality here
+            alert('Receipt download functionality not yet implemented.');
+        }
+    </script>
+</body>
+</html>

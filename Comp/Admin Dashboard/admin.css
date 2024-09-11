@@ -587,3 +587,38 @@ header h1 {
   color: #999;
   cursor: not-allowed;
 }
+/* Logout Button Styling */
+.logout-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001; /* Ensure it is above other elements */
+}
+
+.btn-logout {
+  background-color: #dc3545; /* Red color for logout */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.btn-logout i {
+  font-size: 16px;
+}
+
+.btn-logout:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.btn-logout:focus {
+  outline: none;
+}
+

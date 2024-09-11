@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Payments</title>
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-user-shield"></i> Hostel Admin
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="sidebar-item"><a href="managestudents.html" class="sidebar-link"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+            <li class="sidebar-item"><a href="manage-staff.html" class="sidebar-link"><i class="fas fa-user-tie"></i> Manage Staff</a></li>
+            <li class="sidebar-item"><a href="manage-warden.html" class="sidebar-link"><i class="fas fa-user-cog"></i> Manage Wardens</a></li>
+            <li class="sidebar-item "><a href="manageroom.html" class="sidebar-link"><i class="fas fa-bed"></i> Manage Rooms</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-tools"></i> Maintenance Requests</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-exclamation-triangle"></i> Complaints</a></li>
+            <li class="sidebar-item active"><a href="managepayment.html" class="sidebar-link"><i class="fas fa-credit-card"></i> Payments</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-cogs"></i> Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Manage Payments</h1>
+        </header>
+
+        <!-- Payment Table -->
+        <div class="payment-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Due Amount</th>
+                        <th>Paid Amount</th>
+                        <th>Remaining Amount</th>
+                        <th>Last Payment Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1001</td>
+                        <td>Ashish Raj</td>
+                        <td>₹1500</td>
+                        <td>₹1200</td>
+                        <td>₹300</td>
+                        <td>2024-09-10</td>
+                        <td>
+                            <a href="updatepayment.html" class="update-button">Update</a>
+                            <a href="acceptpayment.html" class="accept-button">Accept Payment</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1002</td>
+                        <td>Rishu Kumar</td>
+                        <td>₹2600</td>
+                        <td>₹1400</td>
+                        <td>₹1200</td>
+                        <td>2024-09-09</td>
+                        <td>
+                            <a href="updatepayment.html" class="update-button">Update</a>
+                            <a href="acceptpayment.html" class="accept-button">Accept Payment</a>
+                        </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

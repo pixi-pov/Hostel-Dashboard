@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Payment</title>
+    <link rel="stylesheet" href="updatepayment.css">
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Update Payment</h1>
+        </header>
+
+        <!-- Back Button -->
+        <div class="back-button-container">
+            <a href="managepayment.html" class="back-button">Back to Manage Payments</a>
+        </div>
+
+        <!-- Update Form -->
+        <div class="update-form">
+            <form id="paymentForm" onsubmit="return handleSubmit(event)">
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" name="studentId" value="1001" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value="Ashish Raj" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="dueAmount">Due Amount</label>
+                    <input type="text" id="dueAmount" name="dueAmount" value="₹1500" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="paidAmount">Paid Amount</label>
+                    <input type="text" id="paidAmount" name="paidAmount" value="₹1200">
+                </div>
+                <div class="form-group">
+                    <label for="remainingAmount">Remaining Amount</label>
+                    <input type="text" id="remainingAmount" name="remainingAmount" value="₹300" readonly>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-button">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <p>Payment Updated Successfully!</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for form submission and popup handling -->
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Show the success popup
+            document.getElementById('successPopup').style.display = 'flex'; 
+
+            return false; // Prevent form submission
+        }
+
+        function closePopup() {
+            document.getElementById('successPopup').style.display = 'none'; // Hide the popup
+        }
+    </script>
+</body>
+</html>
