@@ -1,0 +1,223 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    display: flex;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-item {
+    margin: 10px 0;
+}
+
+.sidebar-link {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.sidebar-link:hover, .sidebar-item.active .sidebar-link {
+    background-color: #0056b3;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    padding: 30px;
+    flex: 1;
+    background-color: #f4f7fa;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 32px;
+    color: #2C3E50;
+    font-weight: 700;
+}
+
+.month-label {
+    font-size: 18px;
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Report Section Enhancements */
+.report-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Individual Report Cards */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    font-size: 20px;
+    color: blue;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #2C3E50;
+    padding-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Highlight for Numbers */
+.card-content strong {
+    color: green; /* Text color */
+    background-color: #e0f7e9; /* Light green background color for highlight */
+    padding: 2px 4px; /* Padding to give some space around the text */
+    border-radius: 4px; /* Rounded corners for the highlight */
+}
+/* Button for Section Navigation */
+.heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-btn {
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.section-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Print Section */
+.print-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.print-btn {
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.print-btn:hover {
+    background-color: #218838;
+}
+
+/* Logo Container */
+.logo-container {
+    text-align: center;
+    margin-top: 30px;
+    display: none; /* Hide logo by default */
+}
+
+.logo-img {
+    max-width: 500%; /* Increase size by 10% */
+    height: auto;
+    max-height: 150px; /* Adjust height as needed */
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        margin: 0;
+    }
+
+    .sidebar, .print-btn {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .report-container {
+        box-shadow: none; /* Remove box shadow for print */
+    }
+
+    .card {
+        margin-bottom: 10px; /* Reduce spacing between cards */
+        page-break-inside: avoid; /* Avoid breaking inside cards */
+    }
+
+    .logo-container {
+        display: block; /* Show logo in print view */
+        margin-top: 20px; /* Adjust margin for print if needed */
+    }
+
+    @page {
+        size: A4; /* Set size to A4 */
+        margin: 10mm; /* Set margins to 10mm */
+    }
+
+    /* Prevent page breaks within the report container */
+    .report-container {
+        page-break-inside: avoid;
+    }
+}

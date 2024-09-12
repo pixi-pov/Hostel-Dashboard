@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Report</title>
+    <link rel="stylesheet" href="report.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation (Will be hidden in print view) -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-user-shield"></i> Hostel Admin
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="sidebar-item"><a href="managestudents.html" class="sidebar-link"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+            <li class="sidebar-item"><a href="manage-staff.html" class="sidebar-link"><i class="fas fa-user-tie"></i> Manage Staff</a></li>
+            <li class="sidebar-item"><a href="manage-warden.html" class="sidebar-link"><i class="fas fa-user-cog"></i> Manage Wardens</a></li>
+            <li class="sidebar-item"><a href="manageroom.html" class="sidebar-link"><i class="fas fa-bed"></i> Manage Rooms</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-exclamation-triangle"></i> Complaints</a></li>
+            <li class="sidebar-item"><a href="managepayment.html" class="sidebar-link"><i class="fas fa-credit-card"></i> Payments</a></li>
+            <li class="sidebar-item active"><a href="report.html" class="sidebar-link"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-cogs"></i> Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Monthly Hostel Report</h1>
+            <p class="month-label">Report for <strong><span id="report-month">September</span> <span id="report-year">2024</span></strong></p>
+        </header>
+
+        <!-- Report Sections -->
+        <div class="report-container">
+            <section class="card report-summary">
+                <div class="heading-container">
+                    <h2>Financial Summary</h2>
+                    <a href="managepayment.html" class="section-btn">Go to Payments</a>
+                </div>
+                <div class="card-content">
+                    <p>Total Payment Received from Mess: <strong>₹<span id="mess-fee">50,000</span></strong></p>
+                    <p>Total Payment Received from Maintenance: <strong>₹<span id="maintenance-fee">20,000</span></strong></p>
+                </div>
+            </section>
+
+            <section class="card complaint-summary">
+                <div class="heading-container">
+                    <h2>Complaints Summary</h2>
+                    <a href="update.html" class="section-btn">View Complaints</a>
+                </div>
+                <div class="card-content">
+                    <p>Electricity Issues: <strong><span id="electricity-complaints">15</span></strong></p>
+                    <p>Food Quality Issues: <strong><span id="food-complaints">8</span></strong></p>
+                    <p>Wifi Issues: <strong><span id="wifi-complaints">10</span></strong></p>
+                    <p>Room Cleaning Issues: <strong><span id="cleaning-complaints">5</span></strong></p>
+                </div>
+            </section>
+
+            <section class="card staff-summary">
+                <div class="heading-container">
+                    <h2>Staff and Residents</h2>
+                    <a href="index.html" class="section-btn">View Dashboard</a>
+                </div>
+                <div class="card-content">
+                    <p>Total Students in Hostel: <strong><span id="total-students">250</span></strong></p>
+                    <p>Total Staff: <strong><span id="total-staff">30</span></strong></p>
+                    <p>Total Wardens: <strong><span id="total-wardens">5</span></strong></p>
+                </div>
+            </section>
+
+            <div class="print-section">
+                <button onclick="window.print()" class="print-btn">
+                    <i class="fas fa-print"></i> Print Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Add the logo below the report sections -->
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Hostel Logo" class="logo-img">
+        </div>
+    </div>
+
+    <script>
+        // Automatically update the month and year label to the current month and year
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const currentDate = new Date();
+        const currentMonth = monthNames[currentDate.getMonth()];
+        const currentYear = currentDate.getFullYear();
+        document.getElementById('report-month').innerText = `${currentMonth}`;
+        document.getElementById('report-year').innerText = `${currentYear}`;
+    </script>
+</body>
+</html>
