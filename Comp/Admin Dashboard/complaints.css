@@ -1,0 +1,249 @@
+/* Reset and Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  body {
+    background-color: #f4f7fa;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    overflow: auto;
+  }
+  
+  /* Sidebar Navigation */
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #007BFF;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  .sidebar-brand {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-item {
+    margin: 10px 0;
+  }
+  
+  .sidebar-link {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar-link:hover, .sidebar-item.active .sidebar-link {
+    background-color: #0056b3;
+  }
+  
+  /* Sidebar Icons */
+  .sidebar-item i {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 270px; /* Adjusted for fixed sidebar */
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 36px;
+    color: #2C3E50;
+    font-weight: 700;
+    margin: 0;
+    border-bottom: 2px solid #2C3E50;
+    padding-bottom: 10px;
+  }
+  
+
+/* Complaints Dashboard */
+.complaints-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Ensure the content doesn't stretch too wide */
+}
+
+/* Enhanced Complaint Box Styling */
+.complaint-box {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px; /* Increased padding for a larger box */
+    border: 1px solid #d9d9d9;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap between elements */
+    width: 100%; /* Full width of the container */
+    max-width: 800px; /* Increased maximum width */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.complaint-box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #007bff;
+}
+
+.complaint-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 22px;
+    color: #007bff;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.complaint-heading:hover {
+    color: #0056b3;
+}
+
+.arrow-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotate {
+    transform: rotate(180deg);
+}
+
+/* Enhanced Complaint Details Styling */
+.complaint-details {
+    padding-left: 20px;
+    display: none;
+    margin-top: 8px;
+    padding-top: 8px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    list-style-type: disc;
+}
+
+.complaint-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.complaint-details > div {
+    border-bottom: 4px solid #5200f5;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.complaint-details > div:last-child {
+    border-bottom: none;
+}
+
+/* Enhance label styling */
+.complaint p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.complaint p strong {
+    font-weight: 600;
+    color: #0056b3;
+}
+
+.complaint p span {
+    color: #333;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* Hover effects */
+.complaint p:hover {
+    background-color: #e6f0ff;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effect specifically for labels */
+.complaint p:hover strong {
+    color: #003d7a;
+}
+
+/* Complaint Status Styling */
+.status {
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.status.pending {
+    background-color: #ffcdd2;
+    color: #d32f2f;
+}
+
+.status.in-progress {
+    background-color: #fff176;
+    color: rgb(0, 0, 0);
+}
+
+.status.resolved {
+    background-color: #c8e6c9;
+    color: #388e3c;
+}
+
+/* View Details Button */
+.view-details-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.view-details-btn:hover {
+    background-color: #0056b3;
+}

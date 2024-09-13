@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Complaints</title>
+    <link rel="stylesheet" href="complaints.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-user-shield"></i> Hostel Admin
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="sidebar-item"><a href="managestudents.html" class="sidebar-link"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+            <li class="sidebar-item"><a href="manage-staff.html" class="sidebar-link"><i class="fas fa-user-tie"></i> Manage Staff</a></li>
+            <li class="sidebar-item"><a href="manage-warden.html" class="sidebar-link"><i class="fas fa-user-cog"></i> Manage Wardens</a></li>
+            <li class="sidebar-item"><a href="manageroom.html" class="sidebar-link"><i class="fas fa-bed"></i> Manage Rooms</a></li>
+            <li class="sidebar-item active"><a href="managecomplaints.html" class="sidebar-link"><i class="fas fa-exclamation-triangle"></i> Complaints</a></li>
+            <li class="sidebar-item"><a href="managepayment.html" class="sidebar-link"><i class="fas fa-credit-card"></i> Payments</a></li>
+            <li class="sidebar-item"><a href="report.html" class="sidebar-link"><i class="fas fa-file-alt"></i> Reports</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-cogs"></i> Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Manage Complaints</h1>
+        </header>
+
+        <!-- Complaint Categories -->
+        <div class="complaints-dashboard">
+            <!-- Electrician Box -->
+            <div class="complaint-box" id="electrician-box">
+                <div class="complaint-heading" onclick="toggleComplaints('electrician-box')">
+                    <h2>Electrician Complaints</h2>
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </div>
+                <div class="complaint-details">
+                    <div class="complaint">
+                        <p><strong>Complaint by:</strong> <span>John Doe</span></p>
+                        <p><strong>Date:</strong> <span>12th September 2024, Time: 10:00 AM</span></p>
+                        <p><strong>Student ID:</strong> <span>12345</span></p>
+                        <p><strong>Room Number:</strong> <span>101</span></p>
+                        <p><strong>Description:</strong> <span>The room's light is flickering intermittently, and the switch seems to be malfunctioning.</span></p>
+                        <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                    <div class="complaint">
+                        <p><strong>Complaint by:</strong> <span>Sarah Lee</span></p>
+                        <p><strong>Date:</strong> <span>11th September 2024, Time: 2:45 PM</span></p>
+                        <p><strong>Student ID:</strong> <span>67890</span></p>
+                        <p><strong>Room Number:</strong> <span>202</span></p>
+                        <p><strong>Description:</strong> <span>The electrical outlet near the bed is sparking, creating a potential hazard.</span></p>
+                        <p><strong>Status:</strong> <span class="status in-progress">In Progress</span></p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                    <div class="complaint">
+                        <p><strong>Complaint by:</strong> <span>Mike Brown</span></p>
+                        <p><strong>Date:</strong> <span>10th September 2024, Time: 11:30 AM</span></p>
+                        <p><strong>Student ID:</strong> <span>11223</span></p>
+                        <p><strong>Room Number:</strong> <span>303</span></p>
+                        <p><strong>Description:</strong> <span>The circuit breaker trips frequently, causing power outages in the room.</span></p>
+                        <p><strong>Status:</strong> <span class="status resolved">Resolved</span></p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mess Box -->
+            <div class="complaint-box" id="mess-box">
+                <div class="complaint-heading" onclick="toggleComplaints('mess-box')">
+                    <h2>Mess Complaints</h2>
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </div>
+                <div class="complaint-details">
+                    <div class="complaint">
+                        <p><strong>Complaint by:</strong> <span>Mark Smith</span></p>
+                        <p><strong>Date:</strong> <span>10th September 2024, Time: 9:30 AM</span></p>
+                        <p><strong>Student ID:</strong> <span>44556</span></p>
+                        <p><strong>Room Number:</strong> <span>404</span></p>
+                        <p><strong>Description:</strong> <span>The food served today was cold and undercooked.</span></p>
+                        <p><strong>Status:</strong> <span class="status in-progress">In Progress</span></p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                    <div class="complaint">
+                        <p><strong>Complaint by:</strong> <span>Emily Davis</span></p>
+                        <p><strong>Date:</strong> <span>9th September 2024, Time: 5:00 PM</span></p>
+                        <p><strong>Student ID:</strong> <span>77889</span></p>
+                        <p><strong>Room Number:</strong> <span>505</span></p>
+                        <p><strong>Description:</strong> <span>There was a shortage of food items in the evening meal.</span></p>
+                        <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wifi Box -->
+            <div class="complaint-box" id="wifi-box">
+                <div class="complaint-heading" onclick="toggleComplaints('wifi-box')">
+                    <h2>WiFi Complaints</h2>
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </div>
+                <div class="complaint-details">
+                    <div class="complaint">
+                        <p><strong>Complaint by:</strong> <span>Alice Johnson</span></p>
+                        <p><strong>Date:</strong> <span>9th September 2024, Time: 1:00 PM</span></p>
+                        <p><strong>Student ID:</strong> <span>99000</span></p>
+                        <p><strong>Room Number:</strong> <span>606</span></p>
+                        <p><strong>Description:</strong> <span>The WiFi connection is unstable and frequently disconnects.</span></p>
+                        <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plumber Box -->
+            <div class="complaint-box" id="plumber-box">
+                <div class="complaint-heading" onclick="toggleComplaints('plumber-box')">
+                    <h2>Plumber Complaints</h2>
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </div>
+                <div class="complaint-details">
+                    <div class="complaint">
+                        <p><strong>Complaint by:</strong> <span>Bob Green</span></p>
+                        <p><strong>Date:</strong> <span>8th September 2024, Time: 4:30 PM</span></p>
+                        <p><strong>Student ID:</strong> <span>33445</span></p>
+                        <p><strong>Room Number:</strong> <span>707</span></p>
+                        <p><strong>Description:</strong> <span>The bathroom sink is clogged and draining very slowly.</span></p>
+                        <p><strong>Status:</strong> <span class="status in-progress">In Progress</span></p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                    <div class="complaint">
+                        <p><strong>Complaint by:</strong> <span>Jane Brown</span></p>
+                        <p><strong>Date:</strong> <span>7th September 2024, Time: 11:15 AM</span></p>
+                        <p><strong>Student ID:</strong> <span>55667</span></p>
+                        <p><strong>Room Number:</strong> <span>808</span></p>
+                        <p><strong>Description:</strong> <span>There is a leak under the kitchen sink, causing water to pool on the floor.</span></p>
+                        <p><strong>Status:</strong> <span class="status resolved">Resolved</span></p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleComplaints(boxId) {
+            const box = document.getElementById(boxId);
+            const details = box.querySelector('.complaint-details');
+            const arrowIcon = box.querySelector('.arrow-icon');
+            
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+                arrowIcon.classList.remove('rotate');
+            } else {
+                details.style.display = 'block';
+                arrowIcon.classList.add('rotate');
+            }
+        }
+    </script>
+</body>
+</html>
